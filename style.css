@@ -1,6 +1,14 @@
 :root {
-    --image-width: 500px;
-    --logo-container-height: 120px;
+    /* left side */
+    --left-width: 35vw;
+    --top-space: 20vh;
+    /* right side */
+    --top-container: 40vh;
+    --bottom-container: 30vh;
+    --main-color: #f9fafb;
+    --input-color: #E5E7EB; 
+    --input-focus-color: #5c5ccf;
+    --button-color: #596D48;
 }
 
 * {
@@ -13,47 +21,136 @@
     src: url(./src/Norse-Bold.otf);
 }
 
-.container {
-    user-select: none;
-    width: var(--image-width);
+main {
     height: 100vh;
-    margin: 0;
+    width: 100vw;
     display: flex;
-    justify-content: center;
 }
 
-.large-image {
-    position: absolute;
-    display: flex;
-    height: 100vh;
-    width: var(--image-width);
-}
-
-
-.left-container {
-    position: absolute;
-    top: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: var(--logo-container-height);
-    width: var(--image-width);
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 4rem;
-    font-family: norse-bold;
-    color: white;
+.image {
+    background-image: url(./src/image.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    width: var(--left-width);
 }
 
 .logo {
-    height: calc(var(--logo-container-height) - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 20vh;
+    font-family: norse-bold;
+    font-size: 4rem;
+    color: white;
+    padding: 20px 0;
 }
 
-.captation {
-    position: absolute;
-    bottom: 20px;
-    color: white;
+.logo img {
+    height: 100px;
 }
 
-.captation a {
+.right {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - var(--left-width));
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.text {
+    font-size: 2rem;
+    font-weight: 500;
+    height: var(--top-container);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-color: var(--main-color);
+    padding-left: 40px;
+    padding-right: 100px;
+}
+
+.text :last-child {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.middle {
+    height: calc(100vh - calc(var(--bottom-container + --top-container)));
+    position: relative;
+    box-shadow: 3px 3px 5px #aaaaaa;
+    padding-top: 10px;
+    padding: 10px;
+}
+
+.create-title {
+    padding-left: 30px;
+    padding-top: 20px;
+    font-size: 2rem;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px;
+    gap: 30px;
+}
+
+label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+input {
+    height: 32px;
+    font-size: 1rem;
+    padding-left: 5px;
+    border-color: var(--input-color);
+    border-radius: 3px;
+}
+
+input:focus {
+    outline-color: var(--input-focus-color);
+    box-shadow: 3px 3px 5px #aaaaaa;
+}
+
+
+.buttons {
+    height: var(--bottom-container);
+    background-color: var(--main-color);
+    padding: 30px;
+}
+
+button {
+    outline: none;
+    border: 3px solid var(--button-color);
+    border-radius: 8px;
+    padding: 16px 48px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+button:hover {
     color: white;
+    background-color: var(--button-color);
+}
+
+.buttons p {
+    padding-top: 30px;
+    font-size: 1rem;
+}
+
+.buttons p a {
+    text-decoration: none   ;
+    color: var(--button-color);
+    font-weight: 600;
 }
