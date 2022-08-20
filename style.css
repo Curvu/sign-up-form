@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.large-image {
+    position: absolute;
+    display: flex;
+    height: 100vh;
+}
+
+.left-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
