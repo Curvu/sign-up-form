@@ -1,17 +1,59 @@
+:root {
+    --image-width: 500px;
+    --logo-container-height: 120px;
+}
+
 * {
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: norse-bold;
+    src: url(./src/Norse-Bold.otf);
+}
+
+.container {
+    user-select: none;
+    width: var(--image-width);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .large-image {
     position: absolute;
     display: flex;
     height: 100vh;
+    width: var(--image-width);
 }
+
 
 .left-container {
     position: absolute;
+    top: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: var(--logo-container-height);
+    width: var(--image-width);
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 4rem;
+    font-family: norse-bold;
+    color: white;
+}
+
+.logo {
+    height: calc(var(--logo-container-height) - 20px);
+}
+
+.captation {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+}
+
+.captation a {
+    color: white;
 }
