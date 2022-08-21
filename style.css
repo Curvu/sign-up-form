@@ -103,6 +103,12 @@ label {
     font-size: 13px;
 }
 
+label.required::before {
+    content: '*';
+    margin-right: 4px;
+    color: red;
+}
+
 .input {
     display: flex;
     flex-direction: column;
@@ -118,10 +124,10 @@ input {
 }
 
 input:focus {
-    outline-color: var(--input-focus-color);
+    outline: none;
+    border-color: var(--input-focus-color);
     box-shadow: 3px 3px 5px #aaaaaa;
 }
-
 
 .buttons {
     height: var(--bottom-container);
