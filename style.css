@@ -109,24 +109,33 @@ label.required::before {
     color: red;
 }
 
-.input {
+.input-container {
     display: flex;
     flex-direction: column;
     width: 300px;
 }
 
 input {
+    outline: none;
     height: 32px;
     font-size: 1rem;
     padding-left: 5px;
-    border-color: var(--input-color);
-    border-radius: 3px;
+    border: 1.5px solid var(--input-color);
+    border-radius: 4px;
 }
 
 input:focus {
-    outline: none;
     border-color: var(--input-focus-color);
-    box-shadow: 3px 3px 5px #aaaaaa;
+    box-shadow: 1px 1px 2px #aaaaaa;
+}
+
+.error {
+    border-color: red;
+}
+
+.error-message {
+    display: none;
+    color: red;
 }
 
 .buttons {
